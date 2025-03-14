@@ -1,0 +1,40 @@
+﻿@model HotelManagement.Guest.Guests
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container mt-4 text-center">
+    <h1 class="text-center">Guest Details</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </p>
+
+    <div class="d-flex justify-content-center">
+        <div class="card shadow-lg" style="width: 60%;">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped text-center">
+                        <thead class="table-dark">
+
+            <dl class="row">
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.FirstName)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.FirstName)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LastName)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.LastName)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Address)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Address)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Phone)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Phone)</dd>
+            </dl>
+            <div class="text-center mt-3">
+                <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">Edit</a>
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>

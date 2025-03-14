@@ -1,0 +1,75 @@
+﻿@model HotelManagement.Room.Rooms
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+             /* Replace with the path to your background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333; /* Default text color */
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* Make the container more opaque for better readability */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            color: #333; /* Text color for the container */
+        }
+
+        h1, h4, dt {
+            color: #333; /* Ensure headers and labels have good contrast */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add shadow to headers and labels for better visibility */
+        }
+
+        .btn-primary {
+            background-color: #6a11cb;
+            border-color: #6a11cb;
+            color: #fff;
+        }
+
+            .btn-primary:hover {
+                background-color: #4c0fa3;
+                border-color: #4c0fa3;
+            }
+
+    </style>
+</head>
+<body>
+
+    <h1>Details</h1>
+
+    <div class="container">
+        <h4>Rooms</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.RoomType)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.RoomType)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+
+</body>
+</html>

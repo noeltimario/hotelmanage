@@ -1,0 +1,39 @@
+﻿@model HotelManagement.Room.Rooms
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="d-flex justify-content-center">
+    <div class="card shadow-lg" style="width: 60%;">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped text-center">
+                    <thead class="table-dark">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="RoomType" class="control-label"></label>
+                <input asp-for="RoomType" class="form-control" />
+                <span asp-validation-for="RoomType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group my-2">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
